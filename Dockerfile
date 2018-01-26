@@ -9,3 +9,4 @@ RUN cp Downloader.js /usr/local/lib/node_modules/puppeteer/lib
 RUN cd /usr/local/lib/node_modules/puppeteer && node install.js
 RUN echo 'export NODE_PATH="/usr/local/lib/node_modules:$NODE_PATH"'>>/root/.bashrc
 RUN /bin/bash -c "source /root/.bashrc"
+RUN ln -snf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo "Asia/Shanghai" > /etc/timezone
